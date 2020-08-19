@@ -1,0 +1,96 @@
+<div style="width:80%;margin: auto;margin-top: 50px;">
+  <h2 style="text-align: center;padding: 2%;font-weight: 800;">ORDERS TABLE</h2> <button type="button"
+  class="btn btn-danger btn-rounded btn-xl my-0" routerLink="/dashboard/items">Items</button> <button type="button"
+  class="btn btn-danger btn-rounded btn-xl my-0" routerLink="/dashboard/users">Users</button>
+<table id="dtBasicExample" class="table" width="100%">
+  <thead>
+    <tr>
+      <th class="th-sm">Order_Id
+      </th>
+      <th class="th-sm">User_Name
+      </th>
+      <th class="th-sm">User_Email
+      </th>
+      <th class="th-sm">User_Address
+      </th>
+      <th class="th-sm">Payment
+      </th>
+      <th class="th-sm">Products
+      </th>
+      <th class="th-sm">Bill
+      </th>
+      <th class="th-sm">Action
+      </th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of order_list">
+      <td>{{order._id}}</td>
+      <td>{{order.u_name}}</td>
+      <td>{{order.u_email}}</td>
+      <td>{{order.u_address}}</td>
+      <td>{{order.payment}}</td>
+      <td>{{order.products}}</td>
+      <td>${{order.bill}}</td>
+      <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#centralModalSm">Done</button></td>
+
+
+
+
+
+      <!-- Delete Modal -->
+      <div class="modal fade" id="centralModalSm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <!-- Change class .modal-sm to change the size of the modal -->
+      <div class="modal-dialog modal-sm" role="dialog">
+      <div class="modal-content">
+      <div class="modal-header">
+      <h4 class="modal-title w-100" id="myModalLabel">Confirmation</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+      </button>
+      </div>
+      <div class="modal-body" style="font-weight: 900;">
+      Are You sure Order Completed?
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">No</button>
+      <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" (click)="delUser(order._id)">Yes</button>
+      </div>
+      </div>
+      </div>
+      </div>
+      <!-- Delete Modal -->
+
+
+
+
+
+
+
+
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th class="th-sm">Order_Id
+      </th>
+      <th class="th-sm">User_Name
+      </th>
+      <th class="th-sm">User_Email
+      </th>
+      <th class="th-sm">User_Address
+      </th>
+      <th class="th-sm">Payment
+      </th>
+      <th class="th-sm">Products
+      </th>
+      <th class="th-sm">Bill
+      </th>
+      <th class="th-sm">Action
+      </th>
+    </tr>
+  </tfoot>
+</table>
+
+

@@ -1,0 +1,61 @@
+<div style="width:80%;margin: auto;margin-top: 50px;">
+  <h2 style="text-align: center;padding: 2%;font-weight: 800;">ITEMS TABLE</h2><button type="button"
+  class="btn btn-danger btn-rounded btn-xl my-0" routerLink="/dashboard/users">Users</button><button type="button"
+  class="btn btn-danger btn-rounded btn-xl my-0" routerLink="/dashboard/orders">Orders</button><button type="button"
+  class="btn btn-danger btn-rounded btn-xl my-0" routerLink="/dashboard/items/add">ADD ITEM</button>
+<table id="dtBasicExample" class="table" width="100%">
+  <thead>
+    <tr>
+      <th class="th-sm">Item_pic
+      </th>
+      <th class="th-sm">Item_Id
+      </th>
+      <th class="th-sm">Item_Name
+      </th>
+      <th class="th-sm">Item_Price
+      </th>
+      <th class="th-sm">Item_Category
+      </th>
+      <th class="th-sm">Item_Description
+      </th>
+      <th class="th-sm">Delete
+      </th>
+      <th class="th-sm">Update
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of item_list">
+      <td><img src={{item.i_pic}} style="height:100px;width:100px"></td>
+      <td>{{item._id}}</td>
+      <td>{{item.i_name}}</td>
+      <td>${{item.i_price}}</td>
+      <td>{{item.i_category}}</td>
+      <td>{{item.i_description}}</td>
+      <td><button type="button" class="btn btn-danger" (click)="delItem(item._id)">Delete</button></td>
+      <td><button type="button" class="btn btn-danger" (click)="UpdateItem(item._id)">Update</button></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th class="th-sm">Item_pic
+      </th>
+      <th class="th-sm">Item_Id
+      </th>
+      <th class="th-sm">Item_Name
+      </th>
+      <th class="th-sm">Item_Price
+      </th>
+      <th class="th-sm">Item_Category
+      </th>
+      <th class="th-sm">Item_Description
+      </th>
+      <th class="th-sm">Delete
+      </th>
+      <th class="th-sm">Update
+      </th>
+    </tr>
+  </tfoot>
+</table>
+
+

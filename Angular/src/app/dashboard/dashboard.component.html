@@ -1,0 +1,40 @@
+
+<div *ngIf="!param" id="myDIV" class="wrapper" style="background-image: url('/assets/auth/images/bg-registration-form-1.jpg');">
+  <div class="inner">
+    <div class="image-holder">
+      <img src="../../../assets/auth/images/registration-form-1.jpg" alt="">
+    </div>
+    <form [formGroup]="SigninForm" (ngSubmit)="onSubmit()">
+
+      <h3>SIGNIN</h3>
+
+      <div class="form-wrapper">
+        <input type="text" placeholder="Email Address" class="form-control" formControlName="email" required email>
+        <i class="zmdi zmdi-email" *ngIf="email.invalid && (email.dirty || email.touched)">
+          <small class="text-danger" *ngIf="email.errors.required">email is required</small>
+          <small class="text-danger" *ngIf="email.invalid && !email.errors.required">enter valid email address</small>
+        </i>
+      </div>
+
+
+      <div class="form-wrapper">
+        <input type="password" placeholder="Password" class="form-control" formControlName="password" required>
+        <i class="zmdi zmdi-lock"  *ngIf="password.invalid && (password.dirty || password.touched)">
+          <small class="text-danger" *ngIf="password.errors.required">Password is required</small>
+        </i>
+      </div>
+
+
+
+
+      <button style="float:left;width:50%" type="submit">SIGNIN
+        <i class="zmdi zmdi-arrow-right"></i>
+      </button>
+      <button style="float:right;width:30%" routerLink="/">BACK
+      </button>
+    </form>
+  </div>
+</div>
+
+
+

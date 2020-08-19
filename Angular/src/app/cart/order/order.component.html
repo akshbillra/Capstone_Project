@@ -1,0 +1,69 @@
+<app-header></app-header>
+
+<div *ngIf="!param" id="myDIV" class="wrapper" style="background-image: url('/assets/auth/images/bg-registration-form-1.jpg');">
+  <div class="inner">
+    <div class="image-holder">
+      <img src="../../../assets/auth/images/registration-form-1.jpg" alt="">
+    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit(total)">
+
+      <h3>ORDER NOW</h3>
+
+
+
+        <div class="form-wrapper">
+        <input type="text" placeholder="First Name" class="form-control" formControlName="firstName"  required minlength="3">
+        <i class="zmdi zmdi-email"  *ngIf="firstName.invalid && (firstName.dirty || firstName.touched) " [ngClass] = "'error'">
+          <small class="text-danger" *ngIf="firstName.errors.required">firstName is required</small>
+          <small class="text-danger" *ngIf="firstName.errors.minlength">
+          firstName must be at least 3 characters long.
+          </small></i>
+        </div>
+
+        <div class="form-wrapper">
+        <input type="text" placeholder="Last Name" class="form-control" formControlName="lastName" required minlength="3">
+        <i class="zmdi zmdi-email" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" [ngClass] = "'error'">
+          <small class="text-danger" *ngIf="lastName.errors.required">lastName is required</small>
+          <small class="text-danger" *ngIf="lastName.errors.minlength">
+          lastName must be at least 3 characters long.
+          </small>
+      </i></div>
+
+
+
+      <div class="form-wrapper">
+        <input type="text" placeholder="Email Address" class="form-control" formControlName="email" required email>
+        <i class="zmdi zmdi-email" *ngIf="email.invalid && (email.dirty || email.touched)">
+          <small class="text-danger" *ngIf="email.errors.required">email is required</small>
+          <small class="text-danger" *ngIf="email.invalid && !email.errors.required">enter valid email address</small>
+        </i>
+      </div>
+
+      <div class="form-wrapper">
+        <input type="text" placeholder="Address" class="form-control" formControlName="address" required minlength="3">
+        <i class="zmdi zmdi-email" *ngIf="address.invalid && (address.dirty || address.touched)" [ngClass] = "'error'">
+          <small class="text-danger" *ngIf="address.errors.required">address is required</small>
+          <small class="text-danger" *ngIf="address.errors.minlength">
+          address must be at least 3 characters long.
+          </small>
+      </i></div>
+
+      <button style="float:left;width:100%" type="button">TOTAL BILL : ${{total}}
+      </button>
+
+      <button style="float:left;width:100%" type="button">*Only Cash On Delivery
+      </button>
+
+      <button style="float:left;width:50%" type="submit">ORDER
+        <i class="zmdi zmdi-arrow-right"></i>
+      </button>
+      <button style="float:right;width:30%" routerLink="/cart">BACK
+      </button>
+    </form>
+  </div>
+</div>
+
+
+
+
+<app-footer></app-footer>

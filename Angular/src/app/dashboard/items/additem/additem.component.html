@@ -1,0 +1,72 @@
+
+<div *ngIf="!param" id="myDIV" class="wrapper" style="background-image: url('/assets/auth/images/bg-registration-form-1.jpg');">
+  <div class="inner">
+    <div class="image-holder">
+      <img src="../../../assets/auth/images/registration-form-1.jpg" alt="">
+    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+      <h3>ADD ITEM</h3>
+
+
+
+      <div class="form-wrapper">
+        <input type="file" class="form-control" formControlName="profile" (change)="onFileSelect($event)" />
+      </div>
+
+
+
+        <div class="form-wrapper">
+        <input type="text" placeholder="Name" class="form-control" formControlName="Name"  required minlength="3">
+        <i class="zmdi zmdi-email"  *ngIf="Name.invalid && (Name.dirty || Name.touched) " [ngClass] = "'error'">
+          <small class="text-danger" *ngIf="Name.errors.required">Name is required</small>
+          <small class="text-danger" *ngIf="Name.errors.minlength">
+          Name must be at least 3 characters long.
+          </small></i>
+        </div>
+
+        <div class="form-wrapper">
+        <input type="text" placeholder="Description" class="form-control" formControlName="Description" required minlength="3">
+        <i class="zmdi zmdi-email" *ngIf="Description.invalid && (Description.dirty || Description.touched)" [ngClass] = "'error'">
+          <small class="text-danger" *ngIf="Description.errors.required">Description is required</small>
+          <small class="text-danger" *ngIf="Description.errors.minlength">
+            Description must be at least 3 characters long.
+          </small>
+      </i></div>
+
+
+
+      <div class="form-wrapper">
+        <input type="text" placeholder="Category" class="form-control" formControlName="Category" required minlength="3">
+        <i class="zmdi zmdi-email" *ngIf="Category.invalid && (Category.dirty || Category.touched)" [ngClass] = "'error'">
+          <small class="text-danger" *ngIf="Category.errors.required">Category is required</small>
+          <small class="text-danger" *ngIf="Category.errors.minlength">
+            Category must be at least 3 characters long.
+          </small>
+      </i></div>
+
+
+      <div class="form-wrapper">
+        <input type="text" placeholder="Price" class="form-control" formControlName="Price" required minlength="3">
+        <i class="zmdi zmdi-email" *ngIf="Price.invalid && (Price.dirty || Price.touched)" [ngClass] = "'error'">
+          <small class="text-danger" *ngIf="Price.errors.required">Price is required</small>
+          <small class="text-danger" *ngIf="Price.errors.minlength">
+            Price must be at more than 99.
+          </small>
+      </i></div>
+
+
+
+
+
+      <button style="float:left;width:50%" type="submit">ADD
+        <i class="zmdi zmdi-arrow-right"></i>
+      </button>
+      <button style="float:right;width:30%" routerLink="/dashboard/items">BACK
+      </button>
+    </form>
+  </div>
+</div>
+
+
+

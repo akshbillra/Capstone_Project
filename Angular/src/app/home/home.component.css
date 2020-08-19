@@ -1,0 +1,62 @@
+.section1 {
+
+
+  background-image: url('/assets/auth/images/backss.jpg');
+  background-color: black;
+  /* opacity: 90%; */
+}
+
+
+
+.shop {
+
+  background-color: black;
+  color:black;
+  text-align: center;
+  padding:20px;
+
+}
+
+.carousel-caption{
+  top: 40%;
+  transform: translateY(-50%);
+  background: rgba(16, 17, 17, 0.5);
+  padding: 5%;
+}
+
+
+
+
+
+.section2 {
+margin-top: 50px;
+width:60%;
+margin-left: 20%;
+}
+
+
+.shopnow {
+
+margin-top: 30%;
+margin-left: 45%;
+margin-bottom: 100px;
+
+}
+
+
+/* .main-slider{
+  height:400px;
+  width: 100%;
+  overflow: hidden;
+} */
+
+.main-slider .carousel-item {
+  height: 500px;
+}
+
+/* .carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 400px;
+} */
